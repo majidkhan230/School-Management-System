@@ -13,7 +13,7 @@ const routes = [
     },
     {
         path:"/update/:id",
-        element:<EditTask/>
+        element:<AddTask/>
     }
 ]
 
