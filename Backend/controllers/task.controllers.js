@@ -1,4 +1,4 @@
-import taskModel from "../models/task.model"
+import taskModel from "../models/task.model.js"
 
 async function getAllTasks(req,res){
     try {
@@ -16,6 +16,7 @@ res.status(200).send({
 }
 async function addTask(req,res){
     const taskData  = req.body
+    console.log(taskData)
     try {
         const allTasks = await taskModel.create(taskData)
 res.status(201).send({
@@ -30,6 +31,7 @@ res.status(201).send({
     }
 }
 async function updateTask(req,res){
+
 
 }
 async function deleteTask(req,res){
