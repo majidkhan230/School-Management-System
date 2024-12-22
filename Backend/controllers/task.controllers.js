@@ -31,10 +31,38 @@ res.status(201).send({
     }
 }
 async function updateTask(req,res){
-
+    const id  = req.params.id
+    // console.log(id)
+    try {
+        const task = await taskModel.findByIdAndUpdate(id,req.body)
+res.status(201).send({
+    message:"task sucessfully updated",
+    data: task
+})
+    } catch (error) {
+        res.status(400).send({
+            message:"something went wrong with server",
+            error: error.message
+        })
+    }
+    
 
 }
 async function deleteTask(req,res){
+    const id  = req.params.id
+    console.log(id)
+    try {
+   const task =  await taskModel.findByIdAndDelete(id)
+res.status(201).send({
+    message:"task sucessfully deleted",
+    data: task
+})
+    } catch (error) {
+        res.status(400).send({
+            message:"something went wrong with server",
+            error: error.message
+        })
+    }
 }
 
 
