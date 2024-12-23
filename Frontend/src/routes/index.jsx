@@ -12,8 +12,8 @@ const routes = [
         element:<AddTask/>
     },
     {
-        path:"/update/:id",
-        element:<AddTask/>
+        path:"/edit/:id",
+        element:<AddTask isEditTask/>
     }
 ]
 
